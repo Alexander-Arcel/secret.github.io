@@ -1,0 +1,49 @@
+/* Make the background dark so the "Image Text" pops like in copy.jpg */
+body {
+    background: #000 !important;
+    /* Overriding the pink just for this page to show the effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.portrait-container {
+    text-align: center;
+    width: 95%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff4d6d;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.text-mask-area p {
+    /* The Magic Part: This puts pretty.jpg INSIDE the letters */
+    background: url('pretty.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Text density settings to match copy.jpg */
+    font-size: 10px;
+    /* Small font makes the "image" look higher resolution */
+    line-height: 10px;
+    font-weight: 900;
+    text-align: justify;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-family: 'Arial Black', sans-serif;
+    /* Thick fonts work best for masks */
+}
+
+/* Ensure the button still looks like your main theme */
+.btn {
+    margin-top: 30px;
+}
