@@ -1,11 +1,13 @@
-/* Make the background dark so the "Image Text" pops like in copy.jpg */
+/* 1. Page Layout & Background */
 body {
     background: #000 !important;
-    /* Overriding the pink just for this page to show the effect */
+    /* Makes the mask pop */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .portrait-container {
@@ -22,28 +24,61 @@ h1 {
     font-size: 2.5rem;
 }
 
+/* 2. The Art Mask (The Lyrics Portrait) */
 .text-mask-area p {
-    /* The Magic Part: This puts pretty.jpg INSIDE the letters */
     background: url('pretty.jpg') no-repeat center;
+    /* Your specific image */
     background-size: cover;
     background-attachment: fixed;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    /* Text density settings to match copy.jpg */
+    /* Font settings to match the high-detail art look */
     font-size: 10px;
-    /* Small font makes the "image" look higher resolution */
     line-height: 10px;
     font-weight: 900;
     text-align: justify;
     letter-spacing: 1px;
-    margin: 0 auto;
     text-transform: uppercase;
     font-family: 'Arial Black', sans-serif;
-    /* Thick fonts work best for masks */
 }
 
-/* Ensure the button still looks like your main theme */
+/* 3. Button Spacing & Container */
+.controls-bottom {
+    margin-top: 50px;
+    /* This creates the gap you wanted */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* Space between Play and Back */
+}
+
+/* 4. Styled Buttons (Both identical now) */
+.music-control,
 .btn {
-    margin-top: 30px;
+    display: inline-block;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    /* Perfect rounded corners */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+    transition: all 0.3s ease;
+    min-width: 180px;
+    /* Keeps them the same width */
+    text-align: center;
+}
+
+.music-control:hover,
+.btn:hover {
+    background: #ff758f;
+    transform: scale(1.05);
 }
