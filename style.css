@@ -87,6 +87,30 @@ h1 {
     font-style: italic;
 }
 
+/* New instruction text style */
+.click-hint {
+    font-family: 'Dancing Script', cursive;
+    color: #ff4d6d;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+    animation: gentlePulse 2s infinite ease-in-out;
+}
+
+@keyframes gentlePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
 .img-frame {
     width: 100%;
     max-width: 300px;
@@ -94,10 +118,16 @@ h1 {
     padding: 10px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    /* Soft glowing border to make the photo pop */
     box-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
-    /* This creates a subtle elegant border line */
     border: 2px solid white;
+    transition: transform 0.3s ease;
+    /* Makes the frame react when hovered */
+}
+
+/* Hover effect for the image frame */
+.img-frame:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 77, 109, 0.6);
 }
 
 .img-frame img {
@@ -105,7 +135,6 @@ h1 {
     height: auto;
     display: block;
     border-radius: 15px;
-    /* This gives it the "Gift" look */
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
 }
 
@@ -119,7 +148,6 @@ h1 {
     z-index: 1;
     animation: moveUp linear forwards;
     font-size: 24px;
-    /* default size */
 }
 
 @keyframes moveUp {
@@ -138,38 +166,36 @@ h1 {
 @media screen and (max-width: 480px) {
     .card {
         padding: 1.5rem;
-        /* smaller padding */
         border-radius: 20px;
     }
 
     h1 {
         font-size: 2rem;
-        /* smaller title */
     }
 
     .letter-content p,
     .flower-text {
         font-size: 0.9rem;
-        /* smaller paragraph text */
         line-height: 1.5;
         margin-bottom: 12px;
     }
 
+    .click-hint {
+        font-size: 1.1rem;
+    }
+
     .img-frame {
         max-width: 90%;
-        /* responsive width for small screens */
         padding: 8px;
     }
 
     .btn {
         padding: 10px 25px;
-        /* smaller button padding */
         font-size: 0.9rem;
     }
 
     .heart-shape {
         font-size: 16px;
-        /* smaller hearts for mobile */
     }
 }
 
@@ -191,6 +217,5 @@ h1 {
 
     .heart-shape {
         font-size: 20px;
-        /* slightly smaller hearts for tablets */
     }
 }
